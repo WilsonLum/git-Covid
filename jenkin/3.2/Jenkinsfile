@@ -10,7 +10,7 @@ pipeline {
       }
       steps {
         echo "Building release ${RELEASE} at log level ${LOG_LEVEL}..."
-        sh 'chmod +x jenkin/3.2/buiuld.sh'
+        sh 'chmod +x jenkin/3.2/build.sh'
         withCredentials([string(credentialsId: 'an-api-key', variable: 'API_KEY')]) {
            sh '''
               ./jenkins/3.2/build.sh
