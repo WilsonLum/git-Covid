@@ -23,7 +23,7 @@ pipeline {
         message 'Deploy?'
         ok 'Do it!'
         parameters {
-          sring(name: 'TARGET_ENVIRONMENT', defaultValue: 'PROD',  description: 'Target deployment environment')
+          string(name: 'TARGET_ENVIRONMENT', defaultValue: 'PROD',  description: 'Target deployment environment')
         }
       }
       steps {
