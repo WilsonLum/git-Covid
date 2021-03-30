@@ -19,7 +19,7 @@ pipeline {
             echo "Building release ${RELEASE} for ${STAGE_NAME} with log level ${LOG_LEVEL}..."
           }
         }
-        stage('linux-amd64') {
+        stage('Windows-amd64') {
           steps {
             echo "Building release ${RELEASE} for ${STAGE_NAME} with log level ${LOG_LEVEL}..."
           }
