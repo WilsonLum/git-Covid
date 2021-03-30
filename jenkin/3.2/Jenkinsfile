@@ -33,7 +33,7 @@ pipeline {
     }
     failure {
       archiveArtifacts 'test-results.txt' 
-      slackSedn channel: '#builds',
+      slackSend channel: '#builds',
         message: "Release ${env.RELEASE}, success: ${currentBuild.fullDisplayName}."
     }
   }
