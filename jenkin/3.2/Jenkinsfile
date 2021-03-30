@@ -31,5 +31,10 @@ pipeline {
       slackSedn channel: '#builds',
         message: "Release ${env.RELEASE}, success: ${currentBuild.fullDisplayName}."
     }
+    failure {
+      archiveArtifacts 'test-results.txt' 
+      slackSedn channel: '#builds',
+        message: "Release ${env.RELEASE}, success: ${currentBuild.fullDisplayName}."
+    }
   }
 }
