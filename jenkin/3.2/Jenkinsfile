@@ -28,12 +28,12 @@ pipeline {
   post {
     success {
       archiveArtifacts 'test-results.txt' 
-      slackSedn channel: '#builds',
+      slackSedn channel: '#demo-for-jenkins',
         message: "Release ${env.RELEASE}, success: ${currentBuild.fullDisplayName}."
     }
     failure {
       archiveArtifacts 'test-results.txt' 
-      slackSend channel: '#builds',
+      slackSend channel: '#demo-for-jenkins',
         message: "Release ${env.RELEASE}, success: ${currentBuild.fullDisplayName}."
     }
   }
