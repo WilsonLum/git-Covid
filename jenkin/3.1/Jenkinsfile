@@ -9,7 +9,7 @@ pipeline {
          LOG_LEVEL='INFO' 
       }
       steps {
-        echo "Testing release ${RELEASE} "
+        echo "Testing release ${RELEASE} at log level ${LOG_LEVEL}"
         writeFile file: 'test-results.txt', text: 'passed'
       }
     }
