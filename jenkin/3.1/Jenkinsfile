@@ -10,7 +10,7 @@ pipeline {
       }
       steps {
         echo "Testing release ${RELEASE} "
-        writeFle file: 'test-results.txt', text: 'passed'
+        writeFile file: 'test-results.txt', text: 'passed'
       }
     }
     stage('Test') {
