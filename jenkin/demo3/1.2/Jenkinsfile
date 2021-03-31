@@ -40,7 +40,7 @@ pipeline {
         }
         stage('Smoke Test') {
             steps {
-              sh 'dotnet .jenkin/demo3/src/Pi.Web/bin/Debug/netcoreapp3.1/Pi.Web.dll'
+              sh 'dotnet ./jenkin/demo3/src/Pi.Web/bin/Debug/netcoreapp3.1/Pi.Web.dll'
             }
         }
         stage('Publish') {
