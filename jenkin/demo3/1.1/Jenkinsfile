@@ -18,7 +18,7 @@ pipeline {
         stage('Build') {
             steps {
               echo "Building version: ${VERSION} with suffix: ${VERSION_RC}"
-              sh 'dotnet build -p:VersionPrefix="${VERSION}" --version-suffix "${VERSION_RC}" ./m3/src/Pi.Web/Pi.Web.csproj'
+              sh 'dotnet build -p:VersionPrefix="${VERSION}" --version-suffix "${VERSION_RC}" .jenkin/demo3/src/Pi.Web/Pi.Web.csproj'
             }
         }
         stage('Unit Test') {
@@ -34,7 +34,7 @@ pipeline {
         }
         stage('Smoke Test') {
             steps {
-              sh 'dotnet ./jenkin/demo3/1.1/src/Pi.Web/bin/Debug/netcoreapp3.1/Pi.Web.dll'
+              sh 'dotnet ./jenkin/demo3/src/Pi.Web/bin/Debug/netcoreapp3.1/Pi.Web.dll'
             }
         }
     }
