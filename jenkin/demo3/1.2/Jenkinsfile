@@ -34,7 +34,7 @@ pipeline {
                     dotnet test --logger "trx;LogFileName=Pi.Math.trx" Pi.Math.Tests/Pi.Math.Tests.csproj
                     dotnet test --logger "trx;LogFileName=Pi.Runtime.trx" Pi.Runtime.Tests/Pi.Runtime.Tests.csproj
                 '''
-                mstest testResultsFile:"**/*.trx", keepLongStdio: true
+               // mstest testResultsFile:"**/*.trx", keepLongStdio: true
               }
             }
         }
@@ -48,7 +48,7 @@ pipeline {
                 expression { return params.RC }
             } 
             steps {
-                sh 'dotnet publish -p:VersionPrefix="${VERSION}" --version-suffix "${VERSION_RC}" ./m3/src/Pi.Web/Pi.Web.csproj -o ./out'
+                sh 'dotnet publish -p:VersionPrefix="${VERSION}" --version-suffix "${VERSION_RC}" .jenkin/demo3/src/Pi.Web/Pi.Web.csproj -o ./out'
                 archiveArtifacts('out/')
             }
         }
