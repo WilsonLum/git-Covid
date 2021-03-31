@@ -25,8 +25,8 @@ pipeline {
             steps {
               dir('.jenkin/demo/src') {
                 sh '''
-                    dotnet test --logger "trx;LogFileName=Pi.Math.trx" .Pi.Math.Tests/Pi.Math.Tests.csproj
-                    dotnet test --logger "trx;LogFileName=Pi.Runtime.trx" .Pi.Runtime.Tests/Pi.Runtime.Tests.csproj
+                    dotnet test --logger "trx;LogFileName=Pi.Math.trx" Pi.Math.Tests/Pi.Math.Tests.csproj
+                    dotnet test --logger "trx;LogFileName=Pi.Runtime.trx" Pi.Runtime.Tests/Pi.Runtime.Tests.csproj
                 '''
                 mstest testResultsFile:"**/*.trx", keepLongStdio: true
               }
