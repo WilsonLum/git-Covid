@@ -29,7 +29,7 @@ pipeline {
         }
         stage('Unit Test') {
             steps {
-              dir('.jenkin/demo3/src') {
+              dir('jenkin/demo3/src') {
                 sh '''
                     dotnet test --logger "trx;LogFileName=Pi.Math.trx" Pi.Math.Tests/Pi.Math.Tests.csproj
                     dotnet test --logger "trx;LogFileName=Pi.Runtime.trx" Pi.Runtime.Tests/Pi.Runtime.Tests.csproj
@@ -40,7 +40,7 @@ pipeline {
         }
         stage('Smoke Test') {
             steps {
-              sh 'dotnet ./m3/src/Pi.Web/bin/Debug/netcoreapp3.1/Pi.Web.dll'
+              sh 'dotnet .jenkin/demo3/src/Pi.Web/bin/Debug/netcoreapp3.1/Pi.Web.dll'
             }
         }
         stage('Publish') {
