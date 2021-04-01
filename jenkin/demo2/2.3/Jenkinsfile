@@ -14,6 +14,7 @@ pipeline {
         stage('Audit tools') {                        
             steps {
                 auditTools()
+                hackyWorkaround()
             }
         }
         stage('Build') {
