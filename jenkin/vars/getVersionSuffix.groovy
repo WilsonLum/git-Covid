@@ -7,4 +7,3 @@ def call(Map config) {
         }
     }
 }
-© 2021 GitHub, Inc.
