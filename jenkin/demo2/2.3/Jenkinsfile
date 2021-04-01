@@ -1,4 +1,4 @@
-library identifier: './jenkins@main', 
+library identifier: './jenkin@main', 
         retriever: modernSCM([$class: 'GitSCMSource', remote: 'https://github.com/WilsonLum/git-Covid.git'])
 
 pipeline {
