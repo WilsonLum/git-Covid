@@ -6,7 +6,7 @@ pipeline {
         stage('Build') {                 
             steps {
                 script {
-                    image = docker.build("sixeyed/pi:psod-pipelines", "--pull -f m4/Dockerfile m4")
+                    image = docker.build("WilsonLum/pi:psod-pipelines", "--pull -f demo4/Dockerfile m4")
                 }                
             }
         }   
